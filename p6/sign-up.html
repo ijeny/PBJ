@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studiova - Sign Up</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper overflow-hidden">
+    <section
+      class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
+      <div class="container py-3">
+        <div class="sign-in card mx-auto shadow-lg">
+          <div class="card-body py-8 px-lg-5">
+
+            <!-- LOGO -->
+            <a href="index.html" class="mb-8 hstack justify-content-center">
+              <img src="images/logo-dark.svg" class="img-fluid">
+            </a>
+
+            <!-- FORM SIGN UP -->
+            <form method="POST" action="sign-up.html" class="d-flex flex-column gap-3">
+
+              <div>
+                <input type="text" name="username" class="form-control border-bottom" placeholder="Username" required>
+              </div>
+
+              <div>
+                <input type="email" name="email" class="form-control border-bottom" placeholder="Email" required>
+              </div>
+
+              <div>
+                <input type="password" name="password" class="form-control border-bottom" placeholder="Password"
+                  required>
+              </div>
+
+              <button type="submit" class="btn btn-dark w-100 justify-content-center py-2 fw-medium fs-4">
+                Sign Up
+              </button>
+
+            </form>
+
+            <!-- HASIL SIGN UP (DINAMIS / SIMULASI) -->
+            <!-- HASIL SIGN UP -->
+            {%
+            if _POST:
+            emit("""
+            <div class='alert alert-success text-center mt-4'>
+              Akun berhasil dibuat (simulasi)
+            </div>
+            <div class='text-center'>
+              <a href='sign-in.html'>Login Sekarang</a>
+            </div>
+            """)
+            %}
+
+            <p class="mb-0 fw-medium text-center mt-4">
+              Sudah punya akun?
+              <a class="text-dark" href="sign-in.html">Sign In</a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SCRIPT TEMPLATE -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
